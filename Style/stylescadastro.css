@@ -1,0 +1,19 @@
+/* change the colors */
+
+.cor-principal-bg {
+  background-color: #0f4760;
+}
+
+.cor-titulo {
+  background-color: #1a8fbb;
+}
+
+.btn-primary,
+.btn-primary:hover,
+.btn-primary:visited {
+  background-color: #0f4760 !important;
+}
+
+.btn-primary:active {
+  background-color: #1a8fbb !important;
+}

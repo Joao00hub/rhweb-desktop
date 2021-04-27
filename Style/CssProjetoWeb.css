@@ -1,0 +1,25 @@
+body {
+    padding-top:70px;
+}
+
+
+.color {
+    background: #0f4561;
+}
+
+.color2 {
+    background:#d8e3e8;
+}
+
+.colorDesligado {
+    background: #c9ccd1;
+}
+
+section {
+    padding: 30px 30px 30px 30px;
+}
+
+#navbar {
+    position: fixed;
+    width: 100%;
+}

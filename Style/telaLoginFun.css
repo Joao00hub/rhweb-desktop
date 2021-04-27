@@ -1,0 +1,118 @@
+
+@media only screen and (min-width: 700px){ 
+    
+    h1 {
+    text-align: center;
+    font-size: 80px;
+    color: #333333;
+
+    }
+
+    .divMe {
+        display: none;
+    }   
+
+    .divBtn {
+        width: 300px;
+        height: 300px;
+        display: flex;
+        align-items: center;
+        margin-left: 400px;
+    }
+
+    .btnAdmLogin {
+        width: 350px;
+        background-color: #0f4561;
+        color: white;
+        font-size: 23px;
+        font-weight: bold;
+        padding-top: 25px;
+        padding-bottom: 25px;
+        margin-top: 30px;
+        margin-left: 490px;
+    }
+
+    ::-webkit-input-placeholder {
+        color: #333333 !important;
+    }
+
+    input[type=email] {
+        border-radius: unset !important;
+        background: none;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-color: #333333;
+    }
+
+    input[type=password] {
+        border-radius: unset !important;
+        background: none; 
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-color: #333333;
+    }
+    .input:focus {
+        outline: none !important;
+        box-shadow: 0 0 10px #719ECE;
+    }
+}
+
+@media only screen and (max-width: 700px){ 
+    
+    .logo {
+        width: 200px;
+        margin-top: 100px;    
+    }
+
+    h1 {
+        font-size: 50px;
+        color: #333333;
+        margin-top: 25px;
+        margin-left: 50px;
+        margin-bottom: 90px;
+    }
+
+    .divMa {
+        display: none;
+    }
+
+    .btnAdmLogin {
+        width: 200px;
+        color: white;
+        background-color: #0f4561;
+        font-size: 25px;
+        font-weight: bold; 
+        padding-top: 10px;
+        padding-bottom: 10px;
+        margin-top: 70px;
+        margin-left: 70px;
+    }
+
+    ::-webkit-input-placeholder {
+        color: #333333 !important;
+    }
+
+    input[type=email] {
+        border-radius: unset !important;
+        background: none;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-color: #333333;
+    }
+
+    input[type=password] {
+        border-radius: unset !important;
+        background: none;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-color: #333333;
+    }
+    .input:focus {
+        outline: none !important;
+        box-shadow: 0 0 10px #719ECE;
+    }
+}
