@@ -2,6 +2,9 @@ body {
     padding-top:70px;
 }
 
+.textColor{
+    color: #0f4561 !important;
+}
 
 .color {
     background: #0f4561;
