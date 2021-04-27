@@ -1,0 +1,41 @@
+.color {
+    background: #0f4561;
+}
+
+@media only screen and (min-width: 700px){
+
+    .imgTelaIncio {
+        height: 450px;
+        width: 450px;
+    }
+
+    .divBtns {
+        margin-top: 20px;
+        margin-left: 70px;
+        margin-bottom: 83px;
+    }
+
+    .btnAdm {
+        width: 600px;
+        background-color: #0f4561;
+        color: white;
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }
+}
+
+@media only screen and (max-width: 700px){
+
+    .imgTelaIncio {
+        display: none;
+    }
+    
+    .btnAdm {
+        width: 350px;
+        background-color: #0f4561;
+        color: white;
+        padding-top: 25px;
+        padding-bottom: 25px;
+        margin-left: 5px;
+    }
+}

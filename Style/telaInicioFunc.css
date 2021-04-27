@@ -1,0 +1,54 @@
+.color {
+    background: #0f4561;
+}
+
+@media only screen and (min-width: 700px){
+   
+    .image {
+        height: 480px;
+        width: 480px;
+    }
+
+    .btns {
+        width: 400px;
+        background-color: #0f4561;
+        color: white;
+        margin-left: 100px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    .btnDados {
+        width: 400px;
+        background-color: #0f4561;
+        color: white;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+    .btnDadosM {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 700px){  
+    
+    .image {
+        display: none;
+    }
+    .btns {
+        width: 300px;
+        background-color: #0f4561;
+        color: white;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    .btnDadosM {
+        width: 300px;
+        background-color: #0f4561;
+        color: white;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+    .btnDados {
+        display: none;
+    }
+}
