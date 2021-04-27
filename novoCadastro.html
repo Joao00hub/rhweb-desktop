@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap-5.0.0-beta3-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="novoCadastro.css">
+    <link rel="stylesheet" href="fontawesome-free-5.15.3-web/css/all.min.css">
+    <script src="bootstrap-5.0.0-beta3-dist/js/bootstrap.bundle.js"></script>
+    <script src="fontawesome-free-5.15.3-web/js/all.min.js"></script>
+    <script src="novoCadastro.js"></script>
+
+    <title>rhweb</title>
+</head>
+
+<body>
+    <nav id="navbar" class="color navbar navbar-expand-lg navbar-dark shadow">
+        <div class="container-fluid">
+            <h1 class="navbar-brand fs-2">rhweb</h1>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link fw-light" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-light" href="#">Funcionários</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-light" href="#">Funcionários Desligados</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Novo Cadastro</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-light" href="#">Benefícios</a>
+                    </li>
+                </ul>
+                <a href="#"><i class="fas fa-power-off fa-2x text-light"></i></a>
+            </div>
+        </div>
+    </nav>
+   
+    <div class="container">
+        <form>
+            <div class="row">
+              <div class="col-sm">
+                <h3>Dados Pessoais</h3>
+
+                <label for="nome">Nome: </label>
+			    <input class="formInputs" type="text" id="nome" name="nome" placeholder="Nome completo" pattern="^([a-zA-Z]{2,}\s[a-zA-Z]{1,}'?-?[a-zA-Z]{2,}\s?([a-zA-Z]{1,})?)" required><br>
+                <label for="cpf">CPF: </label>
+			    <input class="formInputs" type="text" id="cpf" name="cpf" placeholder="Ex.: 000.000.000-00" pattern="([0-9]{2}[\.]?[0-9]{3}[\.]?[0-9]{3}[\/]?[0-9]{4}[-]?[0-9]{2})|([0-9]{3}[\.]?[0-9]{3}[\.]?[0-9]{3}[-]?[0-9]{2})" required><br>
+                <label for="dtNasc">Nascimento: </label>
+			    <input class="formInputs" type="text" id="dtNasc" name="dtNasc" placeholder="Ex.: dd/mm/aaaa" maxlength="10" pattern="^(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d$" required><br>
+                <label for="civilStatus">Estado Civil: </label>
+                <select class="formInputs" id="civilStatus" required>
+                    <option value="" selected>Selecione..</option>
+                    <option value="solt">Solteiro(a)</option>
+                    <option value="casad">Casado(a)</option>
+                    <option value="divorc">Divorciado(a)</option>
+                    <option value="viuvo">Viúvo(a)</option>
+                  </select>
+                <br>
+                <label for="sexo">Sexo: </label>
+                <select class="formInputs" id="sexo" required>
+                    <option value="" selected>Selecione..</option>
+                    <option value="fem">Feminino</option>
+                    <option value="masc">Masculino</option>
+                    <option value="outro">Outro</option>
+                  </select>
+                <br>
+                <label for="email">E-mail:</label>
+			    <input class="formInputs" id="email" type="email" name="email" placeholder="Ex.: contato@dominio.com" required><br>
+                <span>Possui Graduação:</span>
+                <label for="grad_ok"><span></span>Sim</label>
+                <input type="radio" id="grad_ok" value="grad_ok" name="graduacao">
+                <label for="grad_n"><span></span>Não</label>
+                <input type="radio" id="grad_n" value="grad_n" name="graduacao"><br>
+                <label for="cep">CEP:</label>
+			    <input class="formInputs" type="text" id="cep" name="cep" pattern="^\d{5}-\d{3}$" placeholder="Ex.: 00000-000" required><br>
+                <label for="endereco">Endereço: </label>
+			    <input class="formInputs" type="text" id="endereco" name="endereco" placeholder="Endereço completo" required><br>
+			    <label for="telCel">Celular:</label>
+			    <input class="formInputs" type="telCel" id="telCel" name="telCel" placeholder="Ex.: (00) 00000-0000" pattern="\(\d{2}\)\s\d{4,5}\-\d{4}" required><br>
+                <label for="telFixo">Fixo:</label>
+			    <input class="formInputs" type="telFixo" id="telFixo" name="telFixo" placeholder="Ex.: (00) 0000-0000" pattern="\(\d{2}\)\s\d{4,5}\-\d{4}"><br>
+                <label for="telEmerg">Emergência:</label>
+			    <input class="formInputs" type="telEmerg" id="telEmerg" name="telEmerg" placeholder="Ex.: (00) 00000-0000" pattern="\(\d{2}\)\s\d{4,5}\-\d{4}"><br>
+                <label for="nomeEmerg">Referência: </label>
+			    <input class="formInputs" type="text" id="nomeEmerg" name="nomeEmerg" placeholder="Nome do contato" required><br>
+                <label for="grauParentesco">Parentesco: </label>
+                <select class="formInputs" id="grauParentesco" required>
+                    <option value="" selected>Selecione..</option>
+                    <option value="mae">Mãe</option>
+                    <option value="pai">Pai</option>
+                    <option value="irmao">Irmã(o)</option>
+                    <option value="conjuge">Cônjuge</option>
+                    <option value="filho">Filho(a)</option>
+                    <option value="outro">Outro</option>
+                </select>
+                <br>
+                <span>Possui Deficiência:</span>
+                <label for="defSim"><span></span>Sim</label>
+                <input type="radio" id="defSim" value="defSim" name="deficiencia">
+                <label for="defNao"><span></span>Não</label>
+                <input type="radio" id="defNao" value="defNao" name="deficiencia"><br>
+                <label for="defTipo">Deficiência: </label>
+			    <input class="formInputs" type="text" id="defTipo" name="defTipo" placeholder="Classificação médica (CIF)"><br>
+              </div>
+              <div class="col-sm">
+                <h3>Dados Administrativos</h3>
+                <label for="cargo">Cargo: </label>
+			    <input class="formInputs" type="text" id="cargo" name="cargo" placeholder="Cargo ocupado" required><br>
+                <label for="dtAdm">Contratação: </label>
+			    <input class="formInputs" type="text" id="dtAdm" name="dtAdm" placeholder="Ex.: dd/mm/aaaa" pattern="^(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d$" maxlength="10" required><br>
+                <label for="dtFerias">Férias: </label>
+			    <input class="formInputs" type="text" id="dtFerias" name="dtFerias" placeholder="Ex.: dd/mm/aaaa" pattern="^(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d$" maxlength="10"><br>
+                <label for="salario">Salário: </label>
+			    <input class="formInputs" type="text" id="salario" name="salario" placeholder="Ex.: 1500,00" pattern="^(\d{1,3}(\.\d{3})*|\d+)(\,\d{2})?$" required><br>
+                <label for="funcFoto">Foto do Funcionário: </label>
+                <div id="funcImageSec">
+                    <img id="funcFoto"/>
+                    <label for="upImage" id="btn-upload" class="btn btn-secondary btn-sm">Carregar Foto</label>
+                    <input id="upImage" accept="image/*" type="file" onChange="document.getElementById('funcFoto').src = window.URL.createObjectURL(this.files[0]);">
+                </div>
+                
+              </div>
+              <div class="col-sm">
+                <h3>Benefícios</h3>
+                <h5>Selecione os benefícios desejados:</h5>
+                <fieldset id="beneficios">
+                    <input type="checkbox" name="beneficios" value="vt" id="vt">
+                    <label for="vt">Vale Transporte</label><br>
+                    <input type="checkbox" name="beneficios" value="va" id="va">
+                    <label for="va">Vale Alimentação</label><br>
+                    <input type="checkbox" name="beneficios" value="vr" id="vr">
+                    <label for="vr">Vale Refeição</label><br>
+                    <input type="checkbox" name="beneficios" value="plSau" id="plSau">
+                    <label for="plSau">Plano de Saúde</label><br>
+                    <input type="checkbox" name="beneficios" value="plOd" id="plOd">
+                    <label for="plOd">Plano Odontológico</label><br>
+                    <input type="checkbox" name="beneficios" value="vc" id="vc">
+                    <label for="vc">Vale Cultura</label><br>
+                </fieldset>
+                <input type="submit" id="btnSave" class="btn btn-outline-secondary" value="Salvar"/>
+                
+              </div>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
