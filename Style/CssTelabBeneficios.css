@@ -1,0 +1,138 @@
+.color {
+    background: #0f4561;
+}
+
+section {
+    padding: 30px 30px 30px 30px;
+}
+
+#navbar{
+    position: fixed;
+    width: 100%;
+}
+
+body {
+    padding-top:74px;
+}
+
+.opcoes {
+    color: #0f4561;
+    font-size: 2em;
+}
+
+.filtrar {
+    padding: 6px 20px;
+    border-radius: 7px;
+    background-color: #0f4561;
+    color: white;
+    border: none;
+
+}
+
+.editar a {
+    color: white;
+    text-decoration: none;
+}
+
+.escolher {
+    padding: 6px 20px;
+    border-radius: 7px;
+    background-color: #0f4561;
+    color: white;
+    border: none;
+}
+
+.incluir {
+    padding: 6px 40px;
+    border-radius: 7px;
+    background-color: #0f4561;
+    color: white;
+    border: none;
+
+}
+
+.boot {
+    border: 2px grey solid;
+    border-radius: 10%;
+    width: 30%;
+    height: 560px;
+    text-align: center;
+    margin: auto;
+    padding: 10px;
+    background-image: linear-gradient(to top,#84c1db, #e6f0f5 );
+    color: #0f4561;
+    border: none;
+
+}
+
+.boot2 {
+    border: 2px grey solid;
+    border-radius: 10%;
+    width: 40%;
+    height: 760px;
+    text-align: center;
+    margin: auto;
+    padding: 10px;
+    background-image: linear-gradient(to top,#84c1db, #e6f0f5 );
+    color: #0f4561;
+    border: none;
+}
+.boot3 {
+
+    border: 2px grey solid;
+    border-radius: 7%;
+    width: 60%;
+    height: 650px;
+    text-align: center;
+    margin: auto;
+    padding: 10px;
+    background-image: linear-gradient(to top,#84c1db, #e6f0f5 );
+    color: #0f4561;
+    border: none;
+
+}
+
+input {
+ border: 1px solid;
+ border-radius: 5px;
+}
+
+
+.incluir a{
+    color: white;
+    text-decoration: none;
+}
+
+.adicionar {
+    padding: 6px 20px;
+    border-radius: 7px;
+    color: white;
+    border: none;
+    
+}
+.adicionar a{
+    text-decoration: none;
+    color: white;
+
+    
+}
+
+.editar {
+    padding: 6px 20px;
+    border-radius: 7px;
+    background-color: #0f4561;
+    color: white;
+    border: none;
+    
+}
+
+.salvar {
+    padding: 6px 20px;
+    border-radius: 7px;
+    background-color: #0f4561;
+    color: white;
+    border: none;
+}
+
+
+
