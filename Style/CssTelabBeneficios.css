@@ -6,13 +6,9 @@ section {
     padding: 30px 30px 30px 30px;
 }
 
-#navbar{
-    position: fixed;
-    width: 100%;
-}
-
 body {
     padding-top:74px;
+    
 }
 
 .opcoes {

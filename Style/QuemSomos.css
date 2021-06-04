@@ -1,0 +1,11 @@
+body {
+    height: 100%;
+    padding-top:70px;
+    place-items: center;
+    display: grid;
+    text-align: center;
+}
+
+#cardQuemSomos {
+    border-radius: 20px;
+}

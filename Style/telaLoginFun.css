@@ -1,3 +1,7 @@
+.link{
+    text-decoration: none;
+    color: #fff;
+}
 
 @media only screen and (min-width: 700px){ 
     
@@ -116,3 +120,4 @@
         box-shadow: 0 0 10px #719ECE;
     }
 }
+
