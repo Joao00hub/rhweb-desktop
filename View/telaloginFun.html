@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="../fontawesome-free-5.15.3-web/css/all.min.css">
     <script src="../bootstrap-5.0.0-beta3-dist/js/bootstrap.bundle.js"></script>
     <script src="../fontawesome-free-5.15.3-web/js/all.min.js"></script>
+    <script src="../Scripts/telaloginFun.js"></script>
 
     <link rel="stylesheet" href="../Style/telaLoginFun.css">
     <link rel="icon" href="" sizes="16x16" type="image/png">
@@ -24,25 +25,25 @@
         <div class="container mt-5 divMa">
             <div class="row">
                 <div class="col-6">
-                    <input type="email" class="form-control" id="campoEmailAdm" placeholder="Insirao o e-mail">
+                    <input type="text" class="form-control" id="campoUserFunc" placeholder="Usuário">
                 </div>
                 <div class="col-6">
-                    <input type="password" class="form-control" id="campoSenhaAdm" placeholder="Senha">
+                    <input type="password" class="form-control" id="campoSenhaFunc" placeholder="Senha">
                 </div>
             </div>
         </div>
         <div class="container mt-5 divMe">
             <div class="row">
                 <div class="mb-3">
-                    <input type="email" class="form-control" id="campoEmailAdm" placeholder="Insirao o e-mail">
+                    <input type="text" class="form-control" id="campoUserFunc" placeholder="Usuário">
                 </div>
                 <div class="mb-3">
-                    <input type="password" class="form-control" id="campoSenhaAdm" placeholder="Senha">
+                    <input type="password" class="form-control" id="campoSenhaFunc" placeholder="Senha">
                 </div>
             </div>
         </div>
         <button type="button" class="btn btn-lg btn-block btnAdmLogin">
-            <a class="link" href="../View/telaInicioFunc.html">Entrar</a></button>
+            <a class="link" onclick="loginFunc()">Entrar</a></button>
     </main>
 </body>
 
