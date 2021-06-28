@@ -26,3 +26,15 @@ section {
     position: fixed;
     width: 100%;
 }
+
+.ativo{
+    color: green;
+}
+
+.ferias{
+    color: #eec302;
+}
+
+.afastamento{
+    color: #ee7402;
+}

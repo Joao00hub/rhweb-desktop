@@ -1,6 +1,6 @@
-const Swal = require('sweetalert2')
 
 async function loginAdm(){
+    
     user = document.getElementById("campoUserAdm").value
     pass = document.getElementById("campoSenhaAdm").value
 
@@ -36,12 +36,6 @@ async function loginAdm(){
                 window.location.href = '../View/telaInicioAdm.html'
             })    
     }else{
-        window.alert('falha')
-        // Swal.fire({
-        //     title: 'Error!',
-        //     text: 'Do you want to continue',
-        //     icon: 'error',
-        //     confirmButtonText: 'Cool'
-        //   })
+        alert("Dados Invalidos");
     }
 }
