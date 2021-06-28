@@ -33,7 +33,7 @@ async function loginAdm(){
                 sessionStorage.setItem('userid', data.id);
 
                 if(data.adm){
-                    window.location.href = '../View/telaInicioAdm.html'
+                    window.location.href = '../View/telaInicioFunc.html'
                 }else{
                     window.alert('Login não é administrador')
                     window.location.href = '../View/index.html'
