@@ -13,6 +13,7 @@
   <script src="../bootstrap-5.0.0-beta3-dist/js/bootstrap.bundle.min.js"></script>
   <script src="../fontawesome-free-5.15.3-web/js/all.min.js"></script>
   <script src="../Scripts/telaNovoCadastro.js"></script>
+  <script src="../Scripts/common.js"></script>
   <link rel="stylesheet" href="../Style/stylescadastro.css" />
   <link rel="stylesheet" href="../Style/telaNovoCadastro.css">
   <title>Cadastro de Funcionário</title>
@@ -45,7 +46,7 @@
                   <a class="nav-link" href="beneficios.html">Benefícios</a>
               </li>
             </ul>
-            <a href="index.html"><i class="fas fa-power-off fa-2x text-light"></i></a>
+            <a onclick="logout()"><i class="fas fa-power-off fa-2x text-light"></i></a>
         </div>
     </div>
 </nav>
@@ -148,27 +149,32 @@
                 <input id="txtEnde" type="text" class="form-control" id="colFormLabel" placeholder="Preenchido pelo CEP" disabled />
               </div>
             </div>
-
-
+  
             <div class="row mb-3">
-              <label for="txtCid" class="col-sm-4 col-form-label">CIDADE:</label>
+              <label for="endNum" class="col-sm-4 col-form-label">NÚMERO:</label>
               <div class="col-sm-8">
-                <input id="txtCid" type="text" class="form-control" id="colFormLabel" placeholder="Preenchido pelo CEP" disabled/>
+                <input type="text" class="form-control" id="endNum" placeholder="Número residencial" required/>
               </div>
             </div>
-
+  
             <div class="row mb-3">
               <label for="txtBair" class="col-sm-4 col-form-label">BAIRRO:</label>
               <div class="col-sm-8">
                 <input id="txtBair" type="text" class="form-control" id="colFormLabel" placeholder="Preenchido pelo CEP" disabled/>
               </div>
             </div>
-
-
+  
             <div class="row mb-3">
-              <label for="endNum" class="col-sm-4 col-form-label">NÚMERO:</label>
+              <label for="endComp" class="col-sm-4 col-form-label">COMPLEMENTO:</label>
               <div class="col-sm-8">
-                <input type="text" class="form-control" id="endNum" placeholder="Número residencial" required/>
+                <input id="endComp" type="text" class="form-control" id="colFormLabel" placeholder="Complemento"/>
+              </div>
+            </div>
+  
+            <div class="row mb-3">
+              <label for="txtCid" class="col-sm-4 col-form-label">CIDADE:</label>
+              <div class="col-sm-8">
+                <input id="txtCid" type="text" class="form-control" id="colFormLabel" placeholder="Preenchido pelo CEP" disabled/>
               </div>
             </div>
 
@@ -243,6 +249,16 @@
             <label for="codFunc" class="col-sm-4 col-form-label">CÓDIGO:</label>
             <div class="col-sm-8">
               <input type="text" class="form-control" id="codFunc" placeholder="Preenchido automaticamente" disabled/>
+            </div>
+          </div>
+
+          <div class="row mb-3">
+            <label class="col-sm-4 col-form-label" for="admin">ADMINISTRADOR:</label>
+            <div class="col-sm-3">
+              <input type="radio" id="sim" value="sim" name="admin">
+                <label class="radio-inline" for="sim"><span></span>Sim</label>
+              <input type="radio" id="nao" value="nao" name="admin"/>
+                <label class="radio-inline" for="nao"><span></span>Não</label>
             </div>
           </div>
           

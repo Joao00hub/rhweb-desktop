@@ -1,5 +1,3 @@
-const Swal = require('sweetalert2')
-
 async function loginFunc(){
     user = document.getElementById("campoUserFunc").value
     pass = document.getElementById("campoSenhaFunc").value
@@ -13,9 +11,7 @@ async function loginFunc(){
 
         var headers = new Headers();
         headers.append('Content-Type', "application/json");
-        
-        const URL = "http://localhost:3000/login";
-        //const URL = "https://rh-web-api.herokuapp.com/login";
+        const URL = "https://rh-web-api.herokuapp.com/login";
     
             fetch(URL, {
                 method: 'POST',
@@ -24,23 +20,21 @@ async function loginFunc(){
             })  
             .then(function(response){
                 if(response.status != 200){
-                    window.alert('falha')
+                    window.alert('Falha ao realizar login')
                 }else{
                     return response.json();
                 }
                 
             })
             .then(function(data){
+                sessionStorage.setItem('admProfile', data.adm)
                 sessionStorage.setItem('acessToken', data.token);
-                window.location.href = "../View/telaInicioFunc.html"
-            })    
+                sessionStorage.setItem('userid', data.id);
+
+                window.location.href = '../View/telaInicioAdm.html'
+
+            });   
     }else{
-        window.alert('falha')
-        // Swal.fire({
-        //     title: 'Error!',
-        //     text: 'Do you want to continue',
-        //     icon: 'error',
-        //     confirmButtonText: 'Cool'
-        //   })
+        window.alert('Preencha os dados!')
     }
 }

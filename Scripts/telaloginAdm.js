@@ -1,4 +1,3 @@
-
 async function loginAdm(){
     
     user = document.getElementById("campoUserAdm").value
@@ -13,10 +12,7 @@ async function loginAdm(){
 
         var headers = new Headers();
         headers.append('Content-Type', "application/json");
-        
-        const URL = "http://localhost:3000/login";
-        //const URL = "https://rh-web-api.herokuapp.com/login";
-    
+        const URL = "https://rh-web-api.herokuapp.com/login";
     
             fetch(URL, {
                 method: 'POST',
@@ -25,15 +21,24 @@ async function loginAdm(){
             })  
             .then(function(response){
                 if(response.status != 200){
-                    window.alert('falha')
+                    window.alert('Falha ao realizar login')
                 }else{
                     return response.json();
                 }
                 
             })
             .then(function(data){
+                sessionStorage.setItem('admProfile', data.adm)
                 sessionStorage.setItem('acessToken', data.token);
-                window.location.href = '../View/telaInicioAdm.html'
+                sessionStorage.setItem('userid', data.id);
+
+                if(data.adm){
+                    window.location.href = '../View/telaInicioAdm.html'
+                }else{
+                    window.alert('Login não é administrador')
+                    window.location.href = '../View/index.html'
+                }
+                
             })    
     }else{
         alert("Dados Invalidos");

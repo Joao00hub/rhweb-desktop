@@ -92,7 +92,6 @@ async function setPicture(){
 
 async function cadastrarFuncionario(){
     const SITUACAO_INICIAL = 1;
-    const COMPLEMENTO = "";
     const funcOjb = await setDados();
 
     async function setDados(){
@@ -106,7 +105,10 @@ async function cadastrarFuncionario(){
             graduacao: document.getElementById("nomeCurso").value,
             cep: document.getElementById("txtCep").value,
             numero: document.getElementById("endNum").value,
-            complemento: COMPLEMENTO,
+            complemento: document.getElementById("endComp").value,
+            logradouro: document.getElementById('txtEnde').value,
+            localidade: document.getElementById('txtCid').value,
+            bairro: document.getElementById('txtBair').value,
             celular: document.getElementById("telCel").value,
             fixo: document.getElementById("telFixo").value,
             emergencia: document.getElementById("telEmerg").value,
@@ -117,17 +119,16 @@ async function cadastrarFuncionario(){
             ferias: document.getElementById("dtFerias").value,
             salario: document.getElementById("salario").value,
             foto: document.getElementById("upImage").value,
-            situacaoId: SITUACAO_INICIAL
+            situacaoId: SITUACAO_INICIAL,
+            isAdmin: document.getElementsByName("admin")[0].checked
         };
     }
 
     var headers = new Headers();
     headers.append('Content-Type', "application/json");
     headers.append("Authorization", "Bearer " + sessionStorage.getItem('acessToken'));
-
-    const URL = "http://localhost:3000/funcionario/novo";
-    //const URL = "https://rh-web-api.herokuapp.com/funcionario/novo";
-
+    const URL = "https://rh-web-api.herokuapp.com/funcionario/novo";
+    
         fetch(URL, {
             method: 'POST',
             body: JSON.stringify(funcOjb),     
@@ -135,14 +136,14 @@ async function cadastrarFuncionario(){
         })  
         .then(function(response){
             if(response.status != 200){
-                return response.json();
+                window.alert("Falha ao cadastrar")
             }else{ 
                 return response.json();
             }
         })
         .then(function(data){
-            window.alert(data)
-            console.log(data);
+            window.alert("Cadastrado com sucesso")
+            window.location.href='../View/TelaFuncionarios.html'
         })    
        
 
