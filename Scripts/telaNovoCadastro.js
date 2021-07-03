@@ -1,52 +1,52 @@
-window.onload = function () {
+// window.onload = function () {
     
-    const btSave = document.getElementById("btSave");
-    btSave.addEventListener('click', function(e) {
+//     const btSave = document.getElementById("btSave");
+//     btSave.addEventListener('click', function(e) {
     
-      e.preventDefault();
-    });
+//       e.preventDefault();
+//     });
 
-    let inputs = document.querySelectorAll("input");
-    let selects = document.querySelectorAll("select");
-    let INPUTS_VALIDATED = false;
-    let SELECTS_VALIDATED = false;
+//     let inputs = document.querySelectorAll("input");
+//     let selects = document.querySelectorAll("select");
+//     let INPUTS_VALIDATED = false;
+//     let SELECTS_VALIDATED = false;
 
-    let button = document.getElementById("btSave");
-    inputs.forEach(function(input) {
-        input.addEventListener("keyup", function() {
-          if(checkInputs(inputs)){
-            INPUTS_VALIDATED = true;
-          }
-        });
-    });
+//     let button = document.getElementById("btSave");
+//     inputs.forEach(function(input) {
+//         input.addEventListener("keyup", function() {
+//           if(checkInputs(inputs)){
+//             INPUTS_VALIDATED = true;
+//           }
+//         });
+//     });
 
-    selects.forEach(function(select) {
-        select.addEventListener("change", function() {
-          if(checkInputs(selects)){
-            SELECTS_VALIDATED = true;
-          }
-        });
-    });
+//     selects.forEach(function(select) {
+//         select.addEventListener("change", function() {
+//           if(checkInputs(selects)){
+//             SELECTS_VALIDATED = true;
+//           }
+//         });
+//     });
 
-    if(INPUTS_VALIDATED && SELECTS_VALIDATED){
-        button.disabled = true;
-    }else{
-        button.disabled = false;
-    }
-}
+//     if(INPUTS_VALIDATED && SELECTS_VALIDATED){
+//         button.disabled = true;
+//     }else{
+//         button.disabled = false;
+//     }
+// }
 
-function checkInputs(inputs) {
-    let filled = true;
-    inputs.forEach(function(input) {
+// function checkInputs(inputs) {
+//     let filled = true;
+//     inputs.forEach(function(input) {
         
-      if((input.value == "" || input.value == null) && input.required) {
-          filled = false;
-      }else{
-          filled = true
-      }
-    });
-    return filled;
-}
+//       if((input.value == "" || input.value == null) && input.required) {
+//           filled = false;
+//       }else{
+//           filled = true
+//       }
+//     });
+//     return filled;
+// }
 
 async function pegarEndereco(){
     let endereco = "";
@@ -91,6 +91,7 @@ async function setPicture(){
 }
 
 async function cadastrarFuncionario(){
+    console.log("casulindo");
     const SITUACAO_INICIAL = 1;
     const COMPLEMENTO = "";
     const funcOjb = await setDados();
@@ -114,6 +115,7 @@ async function cadastrarFuncionario(){
             parentesco: document.getElementById("grauParentesco").value,
             deficiencia: document.getElementById("defTipo").value,
             cargo: document.getElementById("cargo").value,
+            dtAdm: document.getElementById("dtAdm").value,
             ferias: document.getElementById("dtFerias").value,
             salario: document.getElementById("salario").value,
             foto: document.getElementById("upImage").value,
@@ -125,8 +127,8 @@ async function cadastrarFuncionario(){
     headers.append('Content-Type', "application/json");
     headers.append("Authorization", "Bearer " + sessionStorage.getItem('acessToken'));
 
-    const URL = "http://localhost:3000/funcionario/novo";
-    //const URL = "https://rh-web-api.herokuapp.com/funcionario/novo";
+    //const URL = "http://localhost:3000/funcionario/novo";
+    const URL = "https://rh-web-api.herokuapp.com/funcionario/novo";
 
         fetch(URL, {
             method: 'POST',
@@ -137,7 +139,7 @@ async function cadastrarFuncionario(){
             if(response.status != 200){
                 return response.json();
             }else{ 
-                return response.json();
+                console.log("deu ruim");
             }
         })
         .then(function(data){

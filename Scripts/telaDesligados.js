@@ -1,24 +1,13 @@
 window.onload = function(){
     var container = document.getElementById("cards1");  
     let card = "";
-    let img = "";
-
-    function toBinary(string) {
-        const codeUnits = new Uint16Array(string.length);
-        for (let i = 0; i < codeUnits.length; i++) {
-          codeUnits[i] = string.charCodeAt(i);
-        }
-        img = btoa(String.fromCharCode(...new Uint8Array(codeUnits.buffer)));
-        return img;
-      }
 
     var headers = new Headers();
     const token = sessionStorage.getItem('acessToken');
-    console.log(token);
     headers.append('Content-Type', "application/json");
     headers.append("Authorization", "Bearer " + token);
 
-    fetch('https://rh-web-api.herokuapp.com/funcionarios/ativos', {
+    fetch('https://rh-web-api.herokuapp.com/funcionarios/desligados', {
             method: 'GET',
             headers: headers
         })
@@ -36,30 +25,13 @@ window.onload = function(){
                     let classSitua = "";
                     let dataContra = element.dtAdm;
                     const splits = dataContra.split('/');
+                    let dataDemi = element.ultima_atualizacao;
+                    let demiCorrigido = dataDemi.split('-')
                     console.log(splits[2]);
-
-                   if (element.foto != null)
-                   {
-                    toBinary(element.foto)
-                     console.log(img);
-                   }
-                    
-                    switch (element.situacao.descricao) {
-                        case 'Ativo':
-                            classSitua = "ativo";
-                            console.log(classSitua);
-                          break;
-                        case 'Férias':
-                            classSitua = "ferias";
-                            console.log(classSitua);
-                            break;
-                        case 'Afastamento':
-                            classSitua = "afastamento";
-                            console.log(classSitua);
-                          break;
-                        default:
-                          console.log("deu nada");
-                      }                       
+                    console.log()
+                    // let dataDemi = element.dtAdm;
+                    // const splits = dataDemi.split('-');
+                                   
                       if (i == 0)
                       {
                         card += `<div class="row">`
@@ -67,7 +39,7 @@ window.onload = function(){
                        card += `
                   <div class="col-sm-3 my-2 animate__animated animate__fadeInLeft">
                     <div class="card text-center shadow">
-                        <div class="card-header color ">
+                        <div class="card-header colorDesligado ">
                             <img src="../IMG/Rectangle 44.png" style="height: 100px; border-radius: 150px;
                             -webkit-box-shadow: 4px 9px 6px 0px rgb(11 11 11 / 75%)">
                         </div>
@@ -79,10 +51,10 @@ window.onload = function(){
                                 <p class="card-text fs-6 text-muted fw-bolder">${element.cargo}</p>
 
 
-                                <p class="card-text fs-6 fw-lighter text-muted">${splits[2]}-Presente</p>
+                                <p class="card-text fs-6 fw-lighter text-muted">${splits[2]}-${demiCorrigido[0]}</p>
 
 
-                                <p class="card-text fs-6 ${classSitua} mt-2">${element.situacao.descricao}</p>
+                                <p class="card-text fs-6 text-danger mt-2">Desligado</p>
                             </div>
                         </div>
                       </div>

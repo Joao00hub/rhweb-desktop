@@ -1,8 +1,10 @@
 
 async function loginAdm(){
     
-    user = document.getElementById("campoUserAdm").value
-    pass = document.getElementById("campoSenhaAdm").value
+    user = document.getElementById("campoUserAdm").value;//"jessica.bernardes";
+    console.log(user);
+    pass = document.getElementById("campoSenhaAdm").value;//"84616048576";
+    console.log(pass);
 
     if(user && pass){
 
@@ -14,8 +16,8 @@ async function loginAdm(){
         var headers = new Headers();
         headers.append('Content-Type', "application/json");
         
-        const URL = "http://localhost:3000/login";
-        //const URL = "https://rh-web-api.herokuapp.com/login";
+        //const URL = "http://localhost:3000/login";
+        const URL = "https://rh-web-api.herokuapp.com/login";
     
     
             fetch(URL, {
@@ -34,6 +36,7 @@ async function loginAdm(){
             .then(function(data){
                 sessionStorage.setItem('acessToken', data.token);
                 window.location.href = '../View/telaInicioAdm.html'
+                console.log(data.toke)
             })    
     }else{
         alert("Dados Invalidos");
