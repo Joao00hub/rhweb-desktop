@@ -91,13 +91,16 @@ async function setPicture(){
 }
 
 async function cadastrarFuncionario(){
-    console.log("casulindo");
     const SITUACAO_INICIAL = 1;
     const COMPLEMENTO = "";
+    let isAdimin = false;
+    if ($("sim").prop("checked")){
+        isAdmn = true;
+    }
     const funcOjb = await setDados();
 
     async function setDados(){
-        return {
+        return {       
             nome: document.getElementById("nome").value,
             cpf: document.getElementById("cpf").value,
             dataNascimento: document.getElementById("dtNasc").value,
@@ -119,6 +122,7 @@ async function cadastrarFuncionario(){
             ferias: document.getElementById("dtFerias").value,
             salario: document.getElementById("salario").value,
             foto: document.getElementById("upImage").value,
+            isAdimin = isAdmn,
             situacaoId: SITUACAO_INICIAL
         };
     }

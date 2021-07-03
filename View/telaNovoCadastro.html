@@ -22,312 +22,334 @@
 <body>
   <nav class="color navbar navbar-expand-lg navbar-dark shadow-lg fixed-top">
     <div class="container-fluid">
-        <h1 class="navbar-brand fs-2">rhweb</h1>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-            aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="telaInicioAdm.html">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link fw-light" href="TelaFuncionarios.html">Funcionários</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link fw-light" href="TelaFuncionariosDesligados.html">Funcionários Desligados</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link fw-light active" href="#">Novo Cadastro</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="beneficios.html">Benefícios</a>
-              </li>
-            </ul>
-            <a onclick="logout()"><i class="fas fa-power-off fa-2x text-light"></i></a>
-        </div>
+      <h1 class="navbar-brand fs-2">rhweb</h1>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="telaInicioAdm.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fw-light" href="TelaFuncionarios.html">Funcionários</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fw-light" href="TelaFuncionariosDesligados.html">Funcionários Desligados</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fw-light active" href="#">Novo Cadastro</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="beneficios.html">Benefícios</a>
+          </li>
+        </ul>
+        <a onclick="logout()"><i class="fas fa-power-off fa-2x text-light"></i></a>
+      </div>
     </div>
-</nav>
+  </nav>
 
   <nav class="navbar navbar-expand-lg cor-principal-bg justify-content-center">
     <a class="nav-link text-light" href="#">Cadastro de Funcionário</a>
   </nav>
   <div class="cotainer">
     <form id="formCadastro">
-    <div class="row m-5">
-      <div class="col">
-        <div class="p-3 mb-2 cor-titulo text-center text-white shadow animate__animated animate__fadeInDown">
-          Dados Pessoais
-        </div>
+      <div class="row m-5">
+        <div class="col">
+          <div class="p-3 mb-2 cor-titulo text-center text-white shadow animate__animated animate__fadeInDown">
+            Dados Pessoais
+          </div>
 
-        <div class="row animate__animated animate__fadeIn  animate__slower	2s">
-          <div class="col m-3">
-            <div class="row mb-3">
-              <label for="nome" class="col-sm-4 col-form-label">NOME COMPLETO:</label>
-              <div class="col-sm-8">
-                <input class="form-control" type="text" id="nome" name="nome" placeholder="Nome completo" required/>
+          <div class="row animate__animated animate__fadeIn  animate__slower	2s">
+            <div class="col m-3">
+              <div class="row mb-3">
+                <label for="nome" class="col-sm-4 col-form-label">NOME COMPLETO:</label>
+                <div class="col-sm-8">
+                  <input class="form-control" type="text" id="nome" name="nome" placeholder="Nome completo" required />
+                </div>
               </div>
-            </div>
 
-            <div class="row mb-3">
-              <label for="cpf" class="col-sm-4 col-form-label">CPF:</label>
-              <div class="col-sm-8">
-                <input class="form-control"  type="text" id="cpf" name="cpf" placeholder="Ex.: 000.000.000-00" required/>
+              <div class="row mb-3">
+                <label for="cpf" class="col-sm-4 col-form-label">CPF:</label>
+                <div class="col-sm-8">
+                  <input class="form-control" type="text" id="cpf" name="cpf" placeholder="Ex.: 000.000.000-00"
+                    required />
+                </div>
               </div>
-            </div>
 
-            <div class="row mb-3">
-              <label class="col-sm-4 control-label" for="dtNasc">DATA DE NASCIMENTO:</label>
-              <div class="col-sm-8">
-                <input class="form-control input-md" type="text" id="dtNasc" name="dtNasc" placeholder="Ex.: dd/mm/aaaa" maxlength="10" required/>
+              <div class="row mb-3">
+                <label class="col-sm-4 control-label" for="dtNasc">DATA DE NASCIMENTO:</label>
+                <div class="col-sm-8">
+                  <input class="form-control input-md" type="text" id="dtNasc" name="dtNasc"
+                    placeholder="Ex.: dd/mm/aaaa" maxlength="10" required />
+                </div>
               </div>
-            </div>
 
-            <div class="row mb-3">
-              <label for="civilStatus" class="col-sm-4 col-form-label">ESTADO CIVIL:</label>
-              <div class="col-sm-8">
-                <select class="form-select" id="civilStatus" aria-label="Default select example" required>
-                  <option value="" selected>Selecione..</option>
+              <div class="row mb-3">
+                <label for="civilStatus" class="col-sm-4 col-form-label">ESTADO CIVIL:</label>
+                <div class="col-sm-8">
+                  <select class="form-select" id="civilStatus" aria-label="Default select example" required>
+                    <option value="" selected>Selecione..</option>
                     <option value="Solteiro(a)">Solteiro(a)</option>
                     <option value="Casado(a)">Casado(a)</option>
                     <option value="Divorciado(a)">Divorciado(a)</option>
                     <option value="Viuvo(a)">Viúvo(a)</option>
-                </select>
-              </div>
-            </div>
-
-            <div class="row mb-3">
-              <label for="sexo" class="col-sm-4 col-form-label">SEXO:</label>
-              <div class="col-sm-8">
-                <select class="form-select" id="sexo" aria-label="Default select example" required>
-                  <option value="" selected>Selecione..</option>
-                  <option value="Feminino">Feminino</option>
-                  <option value="Masculino">Masculino</option>
-                  <option value="Outro">Outro</option>
-                </select>
-              </div>
-            </div>
-
-            <div class="row mb-3">
-              <label for="email" class="col-sm-4 col-form-label">E-MAIL:</label>
-              <div class="col-md-8">
-                <div class="input-group">
-                  <input class="form-control" id="email" type="email" name="email" placeholder="Ex.: contato@dominio.com" required/>
+                  </select>
                 </div>
               </div>
-            </div>
 
-            <div class="row mb-4">
+              <div class="row mb-3">
+                <label for="sexo" class="col-sm-4 col-form-label">SEXO:</label>
+                <div class="col-sm-8">
+                  <select class="form-select" id="sexo" aria-label="Default select example" required>
+                    <option value="" selected>Selecione..</option>
+                    <option value="Feminino">Feminino</option>
+                    <option value="Masculino">Masculino</option>
+                    <option value="Outro">Outro</option>
+                  </select>
+                </div>
+              </div>
 
-              <label class="col-sm-4 col-form-label" for="graduacao">POSSUI GRADUAÇÃO:</label>
-              <div class="col-sm-3">
-                <input type="radio" id="grad_ok" value="grad_ok" name="graduacao" onclick="checkGraduationFields()">
+              <div class="row mb-3">
+                <label for="email" class="col-sm-4 col-form-label">E-MAIL:</label>
+                <div class="col-md-8">
+                  <div class="input-group">
+                    <input class="form-control" id="email" type="email" name="email"
+                      placeholder="Ex.: contato@dominio.com" required />
+                  </div>
+                </div>
+              </div>
+
+              <div class="row mb-4">
+
+                <label class="col-sm-4 col-form-label" for="graduacao">POSSUI GRADUAÇÃO:</label>
+                <div class="col-sm-3">
+                  <input type="radio" id="grad_ok" value="grad_ok" name="graduacao" onclick="checkGraduationFields()">
                   <label class="radio-inline" for="grad_ok"><span></span>Sim</label>
-                <input type="radio" id="grad_n" value="grad_n" name="graduacao" onclick="checkGraduationFields()"/>
+                  <input type="radio" id="grad_n" value="grad_n" name="graduacao" onclick="checkGraduationFields()" />
                   <label class="radio-inline" for="grad_n"><span></span>Não</label>
+                </div>
+
+                <label for="nomeCurso" class="col-sm-2 col-form-label">CURSO:</label>
+                <div class="col-sm-3">
+                  <input type="nomeCurso" class="form-control" id="nomeCurso" placeholder="Nome do curso" />
+                </div>
+
               </div>
 
-              <label for="nomeCurso" class="col-sm-2 col-form-label">CURSO:</label>
-              <div class="col-sm-3">
-                <input type="nomeCurso" class="form-control" id="nomeCurso" placeholder="Nome do curso"/>
+              <div class="row mb-3">
+                <label for="txtCep" class="col-sm-4 col-form-label">CEP:</label>
+                <div class="col-sm-8">
+                  <input id="txtCep" type="text" class="form-control" onfocusout="pegarEndereco()" maxlength="8"
+                    pattern="^\d{8}$" placeholder="Ex.: 00000000" required />
+                </div>
               </div>
- 
-            </div>
 
-            <div class="row mb-3">
-              <label for="txtCep" class="col-sm-4 col-form-label">CEP:</label>
-              <div class="col-sm-8">
-                <input id="txtCep" type="text" class="form-control" onfocusout="pegarEndereco()" maxlength="8" pattern="^\d{8}$" placeholder="Ex.: 00000000" required/>
+              <div class="row mb-3">
+                <label for="txtEnde" class="col-sm-4 col-form-label">ENDEREÇO:</label>
+                <div class="col-sm-8">
+                  <input id="txtEnde" type="text" class="form-control" id="colFormLabel"
+                    placeholder="Preenchido pelo CEP" disabled />
+                </div>
               </div>
-            </div>
 
-            <div class="row mb-3">
-              <label for="txtEnde" class="col-sm-4 col-form-label">ENDEREÇO:</label>
-              <div class="col-sm-8">
-                <input id="txtEnde" type="text" class="form-control" id="colFormLabel" placeholder="Preenchido pelo CEP" disabled />
+              <div class="row mb-3">
+                <label for="endNum" class="col-sm-4 col-form-label">NÚMERO:</label>
+                <div class="col-sm-8">
+                  <input type="text" class="form-control" id="endNum" placeholder="Número residencial" required />
+                </div>
               </div>
-            </div>
-  
-            <div class="row mb-3">
-              <label for="endNum" class="col-sm-4 col-form-label">NÚMERO:</label>
-              <div class="col-sm-8">
-                <input type="text" class="form-control" id="endNum" placeholder="Número residencial" required/>
-              </div>
-            </div>
-  
-            <div class="row mb-3">
-              <label for="txtBair" class="col-sm-4 col-form-label">BAIRRO:</label>
-              <div class="col-sm-8">
-                <input id="txtBair" type="text" class="form-control" id="colFormLabel" placeholder="Preenchido pelo CEP" disabled/>
-              </div>
-            </div>
-  
-            <div class="row mb-3">
-              <label for="endComp" class="col-sm-4 col-form-label">COMPLEMENTO:</label>
-              <div class="col-sm-8">
-                <input id="endComp" type="text" class="form-control" id="colFormLabel" placeholder="Complemento"/>
-              </div>
-            </div>
-  
-            <div class="row mb-3">
-              <label for="txtCid" class="col-sm-4 col-form-label">CIDADE:</label>
-              <div class="col-sm-8">
-                <input id="txtCid" type="text" class="form-control" id="colFormLabel" placeholder="Preenchido pelo CEP" disabled/>
-              </div>
-            </div>
 
-            <div class="row mb-3">
-              <label for="telCel" class="col-sm-4 col-form-label">CELULAR:</label>
-              <div class="col-sm-8">
-                <input type="text" class="form-control" id="telCel" name="telCel" placeholder="Ex.: (00) 00000-0000" pattern="\(\d{2}\)\s\d{4,5}\-\d{4}" required/>
+              <div class="row mb-3">
+                <label for="txtBair" class="col-sm-4 col-form-label">BAIRRO:</label>
+                <div class="col-sm-8">
+                  <input id="txtBair" type="text" class="form-control" id="colFormLabel"
+                    placeholder="Preenchido pelo CEP" disabled />
+                </div>
               </div>
-            </div>
-            <div class="row mb-3">
-              <label for="telFixo" class="col-sm-4 col-form-label">FIXO:</label>
-              <div class="col-sm-8">
-                <input type="text" class="form-control" id="telFixo" name="telFixo" placeholder="Ex.: (00) 0000-0000" pattern="\(\d{2}\)\s\d{4,5}\-\d{4}"/>
+
+              <div class="row mb-3">
+                <label for="endComp" class="col-sm-4 col-form-label">COMPLEMENTO:</label>
+                <div class="col-sm-8">
+                  <input id="endComp" type="text" class="form-control" id="colFormLabel" placeholder="Complemento" />
+                </div>
               </div>
-            </div>
-            <div class="row mb-3">
-              <label for="telEmerg" class="col-sm-4 col-form-label">CONTATO DE EMERGÊNCIA:</label>
-              <div class="col-sm-8">
-                <input type="text" class="form-control" id="telEmerg" name="telEmerg"  placeholder="Ex.: (00) 00000-0000" pattern="\(\d{2}\)\s\d{4,5}\-\d{4}"/>
+
+              <div class="row mb-3">
+                <label for="txtCid" class="col-sm-4 col-form-label">CIDADE:</label>
+                <div class="col-sm-8">
+                  <input id="txtCid" type="text" class="form-control" id="colFormLabel"
+                    placeholder="Preenchido pelo CEP" disabled />
+                </div>
               </div>
-            </div>
-            <div class="row mb-4">
-              <label for="grauParentesco" class="col-sm-4 col-form-label">GRAU DE PARENTESCO:</label>
-              <div class="col-sm-3">
-                <select class="form-select" id="grauParentesco" aria-label="Default select example">
-                  <option value="" selected>Selecione..</option>
+
+              <div class="row mb-3">
+                <label for="telCel" class="col-sm-4 col-form-label">CELULAR:</label>
+                <div class="col-sm-8">
+                  <input type="text" class="form-control" id="telCel" name="telCel" placeholder="Ex.: (00) 00000-0000"
+                    pattern="\(\d{2}\)\s\d{4,5}\-\d{4}" required />
+                </div>
+              </div>
+              <div class="row mb-3">
+                <label for="telFixo" class="col-sm-4 col-form-label">FIXO:</label>
+                <div class="col-sm-8">
+                  <input type="text" class="form-control" id="telFixo" name="telFixo" placeholder="Ex.: (00) 0000-0000"
+                    pattern="\(\d{2}\)\s\d{4,5}\-\d{4}" />
+                </div>
+              </div>
+              <div class="row mb-3">
+                <label for="telEmerg" class="col-sm-4 col-form-label">CONTATO DE EMERGÊNCIA:</label>
+                <div class="col-sm-8">
+                  <input type="text" class="form-control" id="telEmerg" name="telEmerg"
+                    placeholder="Ex.: (00) 00000-0000" pattern="\(\d{2}\)\s\d{4,5}\-\d{4}" />
+                </div>
+              </div>
+              <div class="row mb-4">
+                <label for="grauParentesco" class="col-sm-4 col-form-label">GRAU DE PARENTESCO:</label>
+                <div class="col-sm-3">
+                  <select class="form-select" id="grauParentesco" aria-label="Default select example">
+                    <option value="" selected>Selecione..</option>
                     <option value="Mãe">Mãe</option>
                     <option value="Pai">Pai</option>
                     <option value="Irmã(o)">Irmã(o)</option>
                     <option value="Cônjuge">Cônjuge</option>
                     <option value="Filho(a)">Filho(a)</option>
                     <option value="Outro">Outro</option>
-                </select>
+                  </select>
+                </div>
+
+                <label for="nomeEmerg" class="col-sm-2 col-form-label">NOME:</label>
+                <div class="col-sm-3">
+                  <input type="text" class="form-control" id="nomeEmerg" placeholder="Nome do contato" />
+                </div>
               </div>
 
-              <label for="nomeEmerg" class="col-sm-2 col-form-label">NOME:</label>
-              <div class="col-sm-3">
-                <input type="text" class="form-control" id="nomeEmerg" placeholder="Nome do contato"/>
-              </div>
-            </div>
-
-            <div class="row mb-3">
-              <label class="col-sm-4 control-label" for="deficiencia">POSSUI DEFICIÊNCIA:</label>
-              <div class="col-md-4">
-                <input type="radio" id="defSim" value="defSim" name="deficiencia" onclick="checkDefFields()">
+              <div class="row mb-3">
+                <label class="col-sm-4 control-label" for="deficiencia">POSSUI DEFICIÊNCIA:</label>
+                <div class="col-md-4">
+                  <input type="radio" id="defSim" value="defSim" name="deficiencia" onclick="checkDefFields()">
                   <label class="radio-inline" for="defSim"><span></span>Sim</label>
-                <input type="radio" id="defNao" value="defNao" name="deficiencia"  onclick="checkDefFields()"/>
+                  <input type="radio" id="defNao" value="defNao" name="deficiencia" onclick="checkDefFields()" />
                   <label class="radio-inline" for="defNao"><span></span>Não</label>
+                </div>
               </div>
-            </div>
 
-            <div class="row mb-3">
-              <label for="defTipo" class="col-sm-4 col-form-label">DEFICIÊNCIA:</label>
-              <div class="col-sm-8">
-                <input class="form-control" type="text" id="defTipo" name="defTipo" placeholder="Classificação médica (CIF)"/>
+              <div class="row mb-3">
+                <label for="defTipo" class="col-sm-4 col-form-label">DEFICIÊNCIA:</label>
+                <div class="col-sm-8">
+                  <input class="form-control" type="text" id="defTipo" name="defTipo"
+                    placeholder="Classificação médica (CIF)" />
+                </div>
               </div>
-            </div>
 
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="col">
-        <div class="row">
-          <div class="p-3 mb-2 cor-titulo text-center text-white shadow animate__animated animate__fadeInDown">
-            Dados Administrativos
-          </div>
+        <div class="col">
+          <div class="row">
+            <div class="p-3 mb-2 cor-titulo text-center text-white shadow animate__animated animate__fadeInDown">
+              Dados Administrativos
+            </div>
 
-          <div class="col m-3 animate__animated animate__fadeIn  animate__slower	2s">
+            <div class="col m-3 animate__animated animate__fadeIn  animate__slower	2s">
 
-            <div class="row mb-3">
-              <label for="codFunc" class="col-sm-4 col-form-label">CÓDIGO:</label>
-              <div class="col-sm-8">
-                <input type="text" class="form-control" id="isAdm" placeholder="Preenchido automaticamente" disabled/>
+              <div class="row mb-3">
+                <label for="codFunc" class="col-sm-4 col-form-label">CÓDIGO:</label>
+                <div class="col-sm-8">
+                  <input type="text" class="form-control" id="isAdm" placeholder="Preenchido automaticamente"
+                    disabled />
+                </div>
               </div>
-            </div>
 
-          <div class="row mb-3">
-            <label for="codFunc" class="col-sm-4 col-form-label">CÓDIGO:</label>
-            <div class="col-sm-8">
-              <input type="text" class="form-control" id="codFunc" placeholder="Preenchido automaticamente" disabled/>
-            </div>
-          </div>
+              <div class="row mb-3">
+                <label for="codFunc" class="col-sm-4 col-form-label">CÓDIGO:</label>
+                <div class="col-sm-8">
+                  <input type="text" class="form-control" id="codFunc" placeholder="Preenchido automaticamente"
+                    disabled />
+                </div>
+              </div>
 
-          <div class="row mb-3">
-            <label class="col-sm-4 col-form-label" for="admin">ADMINISTRADOR:</label>
-            <div class="col-sm-3">
-              <input type="radio" id="sim" value="sim" name="admin">
-                <label class="radio-inline" for="sim"><span></span>Sim</label>
-              <input type="radio" id="nao" value="nao" name="admin"/>
-                <label class="radio-inline" for="nao"><span></span>Não</label>
-            </div>
-          </div>
-          
+              <div class="row mb-3">
+                <label class="col-sm-4 col-form-label" for="admin">ADMINISTRADOR:</label>
+                <div class="col-sm-3">
+                  <input type="radio" id="sim" value="sim" name="admin">
+                  <label class="radio-inline" for="sim"><span></span>Sim</label>
+                </div>
+                <div class="col-sm-3">
+                  <input type="radio" id="nao" value="nao" name="admin" />
+                  <label class="radio-inline" for="nao"><span></span>Não</label>
+                </div>
+              </div>
+            
+
             <div class="row mb-3">
               <label for="cargo" class="col-sm-4 col-form-label">CARGO:</label>
               <div class="col-sm-8">
-                <input  class="form-control" type="text" id="cargo" name="cargo" placeholder="Cargo ocupado" required/>
+                <input class="form-control" type="text" id="cargo" name="cargo" placeholder="Cargo ocupado" required />
               </div>
             </div>
 
             <div class="row mb-3">
               <label class="col-sm-4 control-label" for="dtAdm">CONTRATAÇÃO:</label>
               <div class="col-sm-8">
-                <input class="form-control input-md" onBlur="showhide()" type="text" id="dtAdm" name="dtAdm" placeholder="Ex.: dd/mm/aaaa" pattern="^(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d$" maxlength="10" required/>
+                <input class="form-control input-md" onBlur="showhide()" type="text" id="dtAdm" name="dtAdm"
+                  placeholder="Ex.: dd/mm/aaaa"
+                  pattern="^(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d$" maxlength="10" required />
               </div>
             </div>
 
             <div class="row mb-3">
               <label class="col-sm-4 control-label" for="dtFerias">FÉRIAS:</label>
               <div class="col-sm-8">
-                <input class="form-control input-md" onBlur="showhide()" type="text" id="dtFerias" name="dtFerias" placeholder="Ex.: dd/mm/aaaa" pattern="^(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d$" maxlength="10"/>
+                <input class="form-control input-md" onBlur="showhide()" type="text" id="dtFerias" name="dtFerias"
+                  placeholder="Ex.: dd/mm/aaaa"
+                  pattern="^(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d$" maxlength="10" />
               </div>
             </div>
 
             <div class="row mb-3">
               <label class="col-sm-4 control-label" for="salario">SALÁRIO:</label>
               <div class="col-sm-8">
-                <input class="form-control input-md" type="text" id="salario" name="salario" placeholder="Ex.: 1500,00" required/>
+                <input class="form-control input-md" type="text" id="salario" name="salario" placeholder="Ex.: 1500,00"
+                  required />
               </div>
 
-           <br>
-           <br>
+              <br>
+              <br>
 
-          <label class="col-sm-4 control-label" for="funcFoto">FOTO:</label>
-          <div id="funcImageSec">
-            <img id="funcFoto"/>
-            <label for="upImage" id="btn-upload" class="btn btn-secondary btn-sm">Carregar Foto</label>
-            <input id="upImage" accept="image/*" type="file" onChange="setPicture()"/>
-          </div>
+              <label class="col-sm-4 control-label" for="funcFoto">FOTO:</label>
+              <div id="funcImageSec">
+                <img id="funcFoto" />
+                <label for="upImage" id="btn-upload" class="btn btn-secondary btn-sm">Carregar Foto</label>
+                <input id="upImage" accept="image/*" type="file" onChange="setPicture()" />
+              </div>
 
-          <div>
+              <div>
+                <div class="d-flex justify-content-end">
+                  <button class="btn btn-primary cor-principal-bg animate__animated animate__fadeIn  animate__slower	2s"
+                    type="button" onclick="location.href='beneficios.html'" value="Benefícios">
+                    Benefícios
+                  </button>
+                </div>
+              </div>
+
+            </div>
+
             <div class="d-flex justify-content-end">
-              <button class="btn btn-primary cor-principal-bg animate__animated animate__fadeIn  animate__slower	2s" type="button" onclick="location.href='beneficios.html'" value="Benefícios">
-                Benefícios
-              </button>
+              <button type="button"
+                class="btn btn-primary cor-principal-bg animate__animated animate__fadeIn  animate__slower	2s"
+                id="btSave" onclick="cadastrarFuncionario()">Salvar Dados</button>
             </div>
           </div>
-
         </div>
-
-        <div class="d-flex justify-content-end">
-          <button type="button" class="btn btn-primary cor-principal-bg animate__animated animate__fadeIn  animate__slower	2s" id="btSave" onclick="cadastrarFuncionario()">Salvar Dados</button>
-        </div>        
-      </div>
-    </div>
-  </form>
+    </form>
   </div>
   <script src="../bootstrap-5.0.0-beta3-dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
-    crossorigin="anonymous">
+    integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous">
   </script>
-    
+
 </body>
 
 </html>
