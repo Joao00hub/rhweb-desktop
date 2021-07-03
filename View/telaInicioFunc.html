@@ -11,6 +11,7 @@
     <script src="../bootstrap-5.0.0-beta3-dist/js/bootstrap.bundle.js"></script>
     <script src="../fontawesome-free-5.15.3-web/js/all.min.js"></script>
     <script src="../Scripts/telaInicioFunc.js"></script>
+    <script src="../Scripts/common.js"></script>
     <link rel="stylesheet" href="../Style/telaInicioFunc.css">
     <title>rhweb Funcionário</title>
 </head>
@@ -30,7 +31,7 @@
 
                     </li>
                 </ul>
-                <a href="../View/index.html"><i class="fas fa-power-off fa-2x text-light"></i></a>
+                <a onclick="logout()"><i class="fas fa-power-off fa-2x text-light"></i></a>
             </div>
         </div>
     </nav>
@@ -49,7 +50,7 @@
                 </div>
                 <div class="col-4">
                     <img src="../IMG/telaInicio.jpeg" alt="img" class="image">
-                    <a onclick="carregarDadosFunc()" class="btn btn-lg btn-block btnDados mb-3">VER MEUS DADOS</a>
+                    <a href = "../View/TelaCadastro.html" class="btn btn-lg btn-block btnDados mb-3">VER MEUS DADOS</a>
                 </div>
             </div>
         </div>

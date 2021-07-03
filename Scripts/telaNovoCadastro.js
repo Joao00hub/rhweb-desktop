@@ -127,7 +127,6 @@ async function cadastrarFuncionario(){
     headers.append('Content-Type', "application/json");
     headers.append("Authorization", "Bearer " + sessionStorage.getItem('acessToken'));
 
-    //const URL = "http://localhost:3000/funcionario/novo";
     const URL = "https://rh-web-api.herokuapp.com/funcionario/novo";
 
         fetch(URL, {

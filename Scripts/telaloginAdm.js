@@ -16,7 +16,6 @@ async function loginAdm(){
         var headers = new Headers();
         headers.append('Content-Type', "application/json");
         
-        //const URL = "http://localhost:3000/login";
         const URL = "https://rh-web-api.herokuapp.com/login";
     
     

@@ -10,7 +10,8 @@
     <link rel="stylesheet" href="../Style/QuemSomos.css">
     <script src="../bootstrap-5.0.0-beta3-dist/js/bootstrap.bundle.js"></script>
     <script src="../fontawesome-free-5.15.3-web/js/all.min.js"></script>
-
+    <script src="../Scripts/telaQuemSomosNos.js"></script>
+    <script src="../Scripts/common.js"></script>
     <link rel="stylesheet" href="../Style/telaInicioAdm.css">
     <title>rhweb Administrador</title>
 </head>
@@ -27,8 +28,10 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
+                        <a class="nav-link" aria-current="page" onclick="redirectHome()">Home</a>
                     </li>
                 </ul>
+                <a onclick="logout()"><i class="fas fa-power-off fa-2x text-light"></i></a>
             </div>
         </div>
     </nav>
