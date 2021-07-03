@@ -1,0 +1,36 @@
+body {
+    padding-top: 100px;
+    width: 50%;
+    margin: auto;
+    top: 60px;
+}
+
+.noticias {
+    border: red 1px;
+}
+
+#titlenoticias {
+    background-color: #0f4561;
+    border-radius: 10px;
+    text-align: center;
+    color: #fff;
+}
+
+
+.cards {
+    background-color: #e7e1e1;
+    border-radius: 10px;
+    width: 80%;
+    margin: auto;
+    box-shadow: #626060;
+
+}
+
+.title {
+     text-align: center;
+     color: #0f4561;
+}
+
+.content {
+
+}

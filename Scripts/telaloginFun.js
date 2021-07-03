@@ -31,7 +31,7 @@ async function loginFunc(){
                 sessionStorage.setItem('acessToken', data.token);
                 sessionStorage.setItem('userid', data.id);
 
-                window.location.href = '../View/telaInicioAdm.html'
+                window.location.href = '../View/telaInicioFunc.html'
 
             });   
     }else{

@@ -1,0 +1,28 @@
+body {
+    padding-top: 100px;
+    width: 50%;
+    margin: auto;
+    top: 60px;
+}
+
+
+#titleavisos {
+background-color: #0f4561;
+    border-radius: 10px;
+    text-align: center;
+    color: #fff;
+}
+
+
+#tabela {
+    border: red 1px;
+
+}
+
+.cards {
+    background-color: gray;
+    border-radius: 10px;
+    width: 80%;
+    margin: auto;
+
+}
