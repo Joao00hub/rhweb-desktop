@@ -14,6 +14,8 @@
   <script src="../fontawesome-free-5.15.3-web/js/all.min.js"></script>
   <script src="../Scripts/telaNovoCadastro.js"></script>
   <script src="../Scripts/common.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
   <link rel="stylesheet" href="../Style/stylescadastro.css" />
   <link rel="stylesheet" href="../Style/telaNovoCadastro.css">
   <title>Cadastro de Funcionário</title>
@@ -125,9 +127,9 @@
 
                 <label class="col-sm-4 col-form-label" for="graduacao">POSSUI GRADUAÇÃO:</label>
                 <div class="col-sm-3">
-                  <input type="radio" id="grad_ok" value="grad_ok" name="graduacao" onclick="checkGraduationFields()">
+                  <input type="radio" id="grad_ok" value="grad_ok" name="graduacao">
                   <label class="radio-inline" for="grad_ok"><span></span>Sim</label>
-                  <input type="radio" id="grad_n" value="grad_n" name="graduacao" onclick="checkGraduationFields()" />
+                  <input type="radio" id="grad_n" value="grad_n" name="graduacao" />
                   <label class="radio-inline" for="grad_n"><span></span>Não</label>
                 </div>
 
@@ -139,10 +141,9 @@
               </div>
 
               <div class="row mb-3">
-                <label for="txtCep" class="col-sm-4 col-form-label">CEP:</label>
+                <label class="col-sm-4 col-form-label">CEP:</label>
                 <div class="col-sm-8">
-                  <input id="txtCep" type="text" class="form-control" onfocusout="pegarEndereco()" maxlength="8"
-                    pattern="^\d{8}$" placeholder="Ex.: 00000000" required />
+                  <input id="txtCep" type="text" class="form-control" onfocusout="pegarEndereco()" required />
                 </div>
               </div>
 
@@ -187,22 +188,20 @@
               <div class="row mb-3">
                 <label for="telCel" class="col-sm-4 col-form-label">CELULAR:</label>
                 <div class="col-sm-8">
-                  <input type="text" class="form-control" id="telCel" name="telCel" placeholder="Ex.: (00) 00000-0000"
-                    pattern="\(\d{2}\)\s\d{4,5}\-\d{4}" required />
+                  <input type="text" class="form-control" id="telCel" name="telCel" placeholder="Ex.: (00) 00000-0000" required />
                 </div>
               </div>
               <div class="row mb-3">
                 <label for="telFixo" class="col-sm-4 col-form-label">FIXO:</label>
                 <div class="col-sm-8">
-                  <input type="text" class="form-control" id="telFixo" name="telFixo" placeholder="Ex.: (00) 0000-0000"
-                    pattern="\(\d{2}\)\s\d{4,5}\-\d{4}" />
+                  <input type="text" class="form-control" id="telFixo" name="telFixo" placeholder="Ex.: (00) 0000-0000" />
                 </div>
               </div>
               <div class="row mb-3">
                 <label for="telEmerg" class="col-sm-4 col-form-label">CONTATO DE EMERGÊNCIA:</label>
                 <div class="col-sm-8">
                   <input type="text" class="form-control" id="telEmerg" name="telEmerg"
-                    placeholder="Ex.: (00) 00000-0000" pattern="\(\d{2}\)\s\d{4,5}\-\d{4}" />
+                    placeholder="Ex.: (00) 00000-0000"/>
                 </div>
               </div>
               <div class="row mb-4">
@@ -258,14 +257,6 @@
               <div class="row mb-3">
                 <label for="codFunc" class="col-sm-4 col-form-label">CÓDIGO:</label>
                 <div class="col-sm-8">
-                  <input type="text" class="form-control" id="isAdm" placeholder="Preenchido automaticamente"
-                    disabled />
-                </div>
-              </div>
-
-              <div class="row mb-3">
-                <label for="codFunc" class="col-sm-4 col-form-label">CÓDIGO:</label>
-                <div class="col-sm-8">
                   <input type="text" class="form-control" id="codFunc" placeholder="Preenchido automaticamente"
                     disabled />
                 </div>
@@ -274,12 +265,12 @@
               <div class="row mb-3">
                 <label class="col-sm-4 col-form-label" for="admin">ADMINISTRADOR:</label>
                 <div class="col-sm-3">
-                  <input type="radio" id="sim" value="sim" name="admin">
-                  <label class="radio-inline" for="sim"><span></span>Sim</label>
+                  <input type="radio" id="simAdm" name="admin">
+                  <label class="radio-inline"><span></span>Sim</label>
                 </div>
                 <div class="col-sm-3">
-                  <input type="radio" id="nao" value="nao" name="admin" />
-                  <label class="radio-inline" for="nao"><span></span>Não</label>
+                  <input type="radio" id="naoAdm" name="admin" />
+                  <label class="radio-inline"><span></span>Não</label>
                 </div>
               </div>
             
@@ -295,17 +286,15 @@
               <label class="col-sm-4 control-label" for="dtAdm">CONTRATAÇÃO:</label>
               <div class="col-sm-8">
                 <input class="form-control input-md" onBlur="showhide()" type="text" id="dtAdm" name="dtAdm"
-                  placeholder="Ex.: dd/mm/aaaa"
-                  pattern="^(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d$" maxlength="10" required />
+                  placeholder="Ex.: dd/mm/aaaa" maxlength="10" required />
               </div>
             </div>
 
             <div class="row mb-3">
               <label class="col-sm-4 control-label" for="dtFerias">FÉRIAS:</label>
               <div class="col-sm-8">
-                <input class="form-control input-md" onBlur="showhide()" type="text" id="dtFerias" name="dtFerias"
-                  placeholder="Ex.: dd/mm/aaaa"
-                  pattern="^(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d$" maxlength="10" />
+                <input class="form-control input-md" type="text" id="dtFerias" name="dtFerias"
+                  placeholder="Ex.: dd/mm/aaaa" maxlength="10" />
               </div>
             </div>
 

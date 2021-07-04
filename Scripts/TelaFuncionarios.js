@@ -37,6 +37,7 @@ window.onload = function(){
                     let dataContra = element.dtAdm;
                     const splits = dataContra.split('/');
                     console.log(splits[2]);
+                    let idFunc = element.id;
 
                    if (element.foto != null)
                    {
@@ -66,7 +67,7 @@ window.onload = function(){
                       }
                        card += `
                   <div class="col-sm-3 my-2 animate__animated animate__fadeInLeft">
-                    <div class="card text-center shadow">
+                    <div class="card text-center shadow" onclick=goTo(${element.id})>
                         <div class="card-header color ">
                             <img src="../IMG/Rectangle 44.png" style="height: 100px; border-radius: 150px;
                             -webkit-box-shadow: 4px 9px 6px 0px rgb(11 11 11 / 75%)">
@@ -98,4 +99,9 @@ window.onload = function(){
                 container.innerHTML += card;             
             }
         })
+}
+
+function goTo(id){
+  sessionStorage.setItem('idFuncionarioCard', id);
+  window.location.href = '../View/TelaCadastro.html';
 }

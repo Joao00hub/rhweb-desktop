@@ -96,6 +96,9 @@ window.onload = function () {
 }
 
 function updateStatus(obj, param) {
-    var column = $(obj).parents("tr").find("td:nth-child(" + param + ")");
-    console.log(column.html());
+    var column = $(obj).parents("tr").find("td:nth-child(" + param + ")");   
+    let idDoBeneficio = column.html();
+    console.log(idDoBeneficio);
+     sessionStorage.setItem('idBeneficio', idDoBeneficio);
+     window.location.href = '../View/editarben.html';
   }

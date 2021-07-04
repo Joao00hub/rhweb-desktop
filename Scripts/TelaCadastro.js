@@ -33,7 +33,8 @@ async function redirectHome(){
 }
 
 window.onload = function () {
-    const URL = "https://rh-web-api.herokuapp.com/funcionario/"
+    let pegaIdCard = sessionStorage.getItem("idFuncionarioCard");
+    const URL = "https://rh-web-api.herokuapp.com/funcionario/" + pegaIdCard;
     let funcId = sessionStorage.getItem('userid');
     var headers = new Headers();
     headers.append('Content-Type', "application/json");
@@ -69,26 +70,27 @@ window.onload = function () {
                 select.disabled = true 
             });
         }
-
-        if(data.login.isAdmin){
-            document.getElementById("isAdm").checked = true
-        }else{
-            document.getElementById("notAdm").checked = true
-        }
+        var teste = data.cep;
+        console.log(teste);
+        // if(data.login.isAdmin){
+        //     document.getElementById("isAdm").checked = true
+        // }else{
+        //     document.getElementById("notAdm").checked = true
+        // }
         document.getElementById("codNomeFunc").textContent = `${data.nome} - Matrícula: ${data.id}` 
         document.getElementById("codFunc").value = data.id;
         document.getElementById("nome").value = data.nome;
         document.getElementById("cpf").value = data.cpf;
         document.getElementById("dtNasc").value = data.dataNascimento;
         document.getElementById("civilStatus").value = data.estadoCivil;
-        document.getElementById("sexo").value = data.sexo;
+        // document.getElementById("sexo").value = data.sexo;
         document.getElementById("email").value = data.email;
         document.getElementById("nomeCurso").value = data.graduacao;
-        if(document.getElementById("nomeCurso").value)
-            document.getElementById("grad_ok").checked = true
-        else
-            document.getElementById("grad_n").checked = true
-        document.getElementById("txtCep").value = data.cep;
+        // if(document.getElementById("nomeCurso").value)
+        //     document.getElementById("grad_ok").checked = true
+        // else
+        //     document.getElementById("grad_n").checked = true
+        document.getElementById("txtCep").value = teste;
         document.getElementById("endNum").value = data.numero;
         document.getElementById("endComp").value = data.complemento,
         document.getElementById('txtEnde').value = data.logradouro;

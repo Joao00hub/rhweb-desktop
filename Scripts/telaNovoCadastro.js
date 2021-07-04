@@ -1,4 +1,4 @@
-// window.onload = function () {
+//window.onload = function () {
     
 //     const btSave = document.getElementById("btSave");
 //     btSave.addEventListener('click', function(e) {
@@ -46,8 +46,8 @@
 //       }
 //     });
 //     return filled;
-// }
 
+//}
 async function pegarEndereco(){
     let endereco = "";
     let cep = document.getElementById('txtCep').value;
@@ -58,21 +58,21 @@ async function pegarEndereco(){
     document.getElementById('txtBair').value = endereco.bairro;
 }
 
-async function checkGraduationFields(){
-    if(!document.getElementById('grad_ok').checked){
-        document.getElementById('nomeCurso').disabled = true
-    }else{
-        document.getElementById('nomeCurso').disabled = false
-    }
-}
+// async function checkGraduationFields(){
+//     if(!document.getElementById('grad_ok').checked){
+//         document.getElementById('nomeCurso').disabled = true
+//     }else{
+//         document.getElementById('nomeCurso').disabled = false
+//     }
+// }
 
-async function checkDefFields(){
-    if(!document.getElementById('defSim').checked){
-        document.getElementById('defTipo').disabled = true
-    }else{
-        document.getElementById('defTipo').disabled = false
-    }
-}
+// async function checkDefFields(){
+//     if(!document.getElementById('defSim').checked){
+//         document.getElementById('defTipo').disabled = true
+//     }else{
+//         document.getElementById('defTipo').disabled = false
+//     }
+// }
 
 async function setPicture(){
     var preview = document.querySelector('img');
@@ -89,14 +89,16 @@ async function setPicture(){
       preview.src = "";
     }
 }
-
+let isAdmn = "false";
 async function cadastrarFuncionario(){
     const SITUACAO_INICIAL = 1;
     const COMPLEMENTO = "";
-    let isAdimin = false;
-    if ($("sim").prop("checked")){
-        isAdmn = true;
+    var verificaAdm = document.getElementById('simAdm');
+    
+    if (verificaAdm.checked){
+        isAdmn = "true";
     }
+
     const funcOjb = await setDados();
 
     async function setDados(){
@@ -122,7 +124,7 @@ async function cadastrarFuncionario(){
             ferias: document.getElementById("dtFerias").value,
             salario: document.getElementById("salario").value,
             foto: document.getElementById("upImage").value,
-            isAdimin = isAdmn,
+            isAdmin: isAdmn,
             situacaoId: SITUACAO_INICIAL
         };
     }
