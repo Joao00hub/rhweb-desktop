@@ -81,6 +81,9 @@ async function setPicture(){
   
     reader.onloadend = function () {
       preview.src = reader.result;
+      let base64Pic = reader.result;
+      sessionStorage.setItem('base64TempPic', base64Pic.replace('data:image/png;base64,', ''));
+      console.log(sessionStorage.getItem('base64TempPic'));
     }
   
     if (file) {
@@ -102,6 +105,36 @@ async function cadastrarFuncionario(){
     const funcOjb = await setDados();
 
     async function setDados(){
+       
+        if(sessionStorage.getItem('base64TempPic') != undefined || sessionStorage.getItem('base64TempPic') != null || bsessionStorage.getItem('base64TempPic') != ""){
+
+            const IMGUR_ID = '32a49e8df66e9f8'
+            const URL_IMGUR = "https://api.imgur.com/3/image";
+
+            fetch(URL_IMGUR, {
+                method: 'POST',
+                headers: {
+                  "Content-Type":"application/json",
+                  "Authorization": 'Client-ID '+IMGUR_ID,
+                },
+                form: {
+                  "image": sessionStorage.getItem('base64TempPic'),
+                  "type": "base64"
+                }    
+            })  
+            .then(function(response){
+                if(response.status != 200){
+                    alert('Não foi possível salvar a imagem')
+                    return response.json();
+                }else{ 
+                    return response.json();
+                }
+            })
+            .then(function(data){
+                console.log(data);
+            })    
+            }
+
         return {       
             nome: document.getElementById("nome").value,
             cpf: document.getElementById("cpf").value,
@@ -123,7 +156,7 @@ async function cadastrarFuncionario(){
             dtAdm: document.getElementById("dtAdm").value,
             ferias: document.getElementById("dtFerias").value,
             salario: document.getElementById("salario").value,
-            foto: document.getElementById("upImage").value,
+            foto: null,
             isAdmin: isAdmn,
             situacaoId: SITUACAO_INICIAL
         };

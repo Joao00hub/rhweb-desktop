@@ -39,12 +39,6 @@ window.onload = function(){
                     console.log(splits[2]);
                     let idFunc = element.id;
 
-                   if (element.foto != null)
-                   {
-                    toBinary(element.foto)
-                     console.log(img);
-                   }
-                    
                     switch (element.situacao.descricao) {
                         case 'Ativo':
                             classSitua = "ativo";
@@ -69,8 +63,8 @@ window.onload = function(){
                   <div class="col-sm-3 my-2 animate__animated animate__fadeInLeft">
                     <div class="card text-center shadow" onclick=goTo(${element.id})>
                         <div class="card-header color ">
-                            <img src="../IMG/Rectangle 44.png" style="height: 100px; border-radius: 150px;
-                            -webkit-box-shadow: 4px 9px 6px 0px rgb(11 11 11 / 75%)">
+                            <img src="${element.foto}" style="height: 100px; border-radius: 150px;
+                            -webkit-box-shadow: 4px 9px 6px 0px rgb(11 11 11 / 75%)/">
                         </div>
                         <div class="card-body color2">
                             <h5 class="card-title fs-5 fw-bolder fst-normal">${element.nome}</h5>
