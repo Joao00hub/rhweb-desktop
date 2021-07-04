@@ -144,6 +144,9 @@ async function cadastrarFuncionario(){
             email: document.getElementById("email").value,
             graduacao: document.getElementById("nomeCurso").value,
             cep: document.getElementById("txtCep").value,
+            logradouro: document.getElementById("txtEnde").value,
+            cidade: document.getElementById("txtCid").value,
+            bairro: document.getElementById("txtBair").value,
             numero: document.getElementById("endNum").value,
             complemento: COMPLEMENTO,
             celular: document.getElementById("telCel").value,
@@ -155,8 +158,8 @@ async function cadastrarFuncionario(){
             cargo: document.getElementById("cargo").value,
             dtAdm: document.getElementById("dtAdm").value,
             ferias: document.getElementById("dtFerias").value,
-            salario: document.getElementById("salario").value,
-            foto: null,
+            salario: document.getElementById("FunSalario").value,
+            foto: document.getElementById("upImage").value,
             isAdmin: isAdmn,
             situacaoId: SITUACAO_INICIAL
         };

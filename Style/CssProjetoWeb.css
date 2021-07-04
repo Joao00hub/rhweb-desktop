@@ -38,3 +38,8 @@ section {
 .afastamento{
     color: #ee7402;
 }
+
+#nomeCurso{
+    margin-left: 26%;
+    width: 100%;
+}
