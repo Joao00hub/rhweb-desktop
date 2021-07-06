@@ -74,6 +74,11 @@ async function pegarEndereco(){
 //     }
 // }
 
+function cadastraBeneficio(){
+    sessionStorage.setItem('novoFuncionario', true);
+    window.location.href = '../View/beneficios.html';
+}
+
 async function setPicture(){
     var preview = document.querySelector('img');
     var file    = document.querySelector('input[type=file]').files[0];
@@ -128,10 +133,11 @@ async function cadastrarFuncionario(){
             salario: document.getElementById("FunSalario").value,
             foto: document.getElementById("upImage").value,
             isAdmin: isAdmn,
-            situacaoId: SITUACAO_INICIAL
+            situacaoId: 1
         };
     }
-
+    
+    console.log(funcOjb);
     var headers = new Headers();
     headers.append('Content-Type', "application/json");
     headers.append("Authorization", "Bearer " + sessionStorage.getItem('acessToken'));

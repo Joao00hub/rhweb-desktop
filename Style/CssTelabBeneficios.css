@@ -104,7 +104,7 @@ input {
     border-radius: 7px;
     color: white;
     border: none;
-    
+    box-shadow: 1px 3px 5px 0px rgba(0,0,0,0.75);    
 }
 .adicionar a{
     text-decoration: none;
@@ -113,13 +113,22 @@ input {
     
 }
 
+.excluir {
+    padding: 6px 20px;
+    border-radius: 7px;
+    background-color: #d36d6d;
+    color: white;
+    border: none;
+    box-shadow: 1px 3px 5px 0px rgba(0,0,0,0.75);    
+}
+
 .editar {
     padding: 6px 20px;
     border-radius: 7px;
     background-color: #0f4561;
     color: white;
     border: none;
-    
+    box-shadow: 1px 3px 5px 0px rgba(0,0,0,0.75);    
 }
 
 .salvar {
