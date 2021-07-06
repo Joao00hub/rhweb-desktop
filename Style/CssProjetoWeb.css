@@ -43,3 +43,9 @@ section {
     margin-left: 26%;
     width: 100%;
 }
+
+.posicionaSlct{
+    position: relative;
+    left: 2%;
+    width: 106%;
+}

@@ -35,6 +35,7 @@ async function loginAdm(){
             .then(function(data){
                 sessionStorage.setItem('acessToken', data.token);
                 sessionStorage.setItem('novoFuncionario', false);
+                sessionStorage.setItem('admProfile', "true");
                 window.location.href = '../View/telaInicioAdm.html'
                 console.log(data.toke)
             })    
