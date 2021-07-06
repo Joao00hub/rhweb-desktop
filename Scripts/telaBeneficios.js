@@ -91,13 +91,19 @@ function removeBen(obj, param) {
         })  
         .then(function(response){
             if(response.status != 200){                
-                return response.json();
-            }else{ 
-                console.log("deu ruim");
-            }
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Erro',
+                    text: 'Não foi possível apagar o benefício. Se o erro persistir contate o administrador do sistema.'
+                  })
+                }
         })
         .then(function(){
-            window.alert("excluido com sucesso!");
-            Location.reload();
+            Swal.fire({
+                icon: 'success',
+                title: 'Benefício apagado com sucesso!',
+                showConfirmButton: true,
+            });
+            setTimeout("window.location.href = '../View/beneficios.html';", 1500);
         })    
 }

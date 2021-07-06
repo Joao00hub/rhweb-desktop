@@ -217,34 +217,34 @@ async function EditarFuncionario() {
 
     async function setDados() {
 
-        // if (sessionStorage.getItem('base64TempPic') != undefined || sessionStorage.getItem('base64TempPic') != null || bsessionStorage.getItem('base64TempPic') != "") {
+        if (sessionStorage.getItem('base64TempPic') != undefined || sessionStorage.getItem('base64TempPic') != null || bsessionStorage.getItem('base64TempPic') != "") {
 
-        //     const IMGUR_ID = '32a49e8df66e9f8'
-        //     const URL_IMGUR = "https://api.imgur.com/3/image";
+            const IMGUR_ID = '32a49e8df66e9f8'
+            const URL_IMGUR = "https://api.imgur.com/3/image";
 
-        //     fetch(URL_IMGUR, {
-        //             method: 'POST',
-        //             headers: {
-        //                 "Content-Type": "application/json",
-        //                 "Authorization": 'Client-ID ' + IMGUR_ID,
-        //             },
-        //             form: {
-        //                 "image": sessionStorage.getItem('base64TempPic'),
-        //                 "type": "base64"
-        //             }
-        //         })
-        //         .then(function (response) {
-        //             if (response.status != 200) {
-        //                 alert('Não foi possível salvar a imagem')
-        //                 return response.json();
-        //             } else {
-        //                 return response.json();
-        //             }
-        //         })
-        //         .then(function (data) {
-        //             console.log(data);
-        //         })
-        // }
+            fetch(URL_IMGUR, {
+                    method: 'POST',
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Authorization": 'Client-ID ' + IMGUR_ID,
+                    },
+                    form: {
+                        "image": sessionStorage.getItem('base64TempPic'),
+                        "type": "base64"
+                    }
+                })
+                .then(function (response) {
+                    if (response.status != 200) {
+                        alert('Ocorreu um erro ao salvar imagem do funcionário.')
+                        return response.json();
+                    } else {
+                        return response.json();
+                    }
+                })
+                .then(function (data) {
+                    console.log(data);
+                })
+        }
 
         return {
             nome: document.getElementById("nome").value,
@@ -294,14 +294,14 @@ async function EditarFuncionario() {
               Swal.fire({
                 icon: 'error',
                 title: 'Erro',
-                text: 'Não foi possivel atualizar o funcionario'
+                text: 'Não foi possivel atualizar o funcionário'
               })
             return response.json();
 
         }else{
             Swal.fire({
                 icon: 'success',
-                title: 'Funcionario alterado com sucesso!',
+                title: 'Funcionário alterado com sucesso!',
                 showConfirmButton: true,
               })
         }
@@ -309,5 +309,5 @@ async function EditarFuncionario() {
     .then(function(data){
     })
 
-    sessionStorage.settItem("idFuncionarioCard", "");
+    sessionStorage.setItem("idFuncionarioCard", "");
 }

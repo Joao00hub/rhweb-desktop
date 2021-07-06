@@ -6,7 +6,6 @@ window.onload = function () {
 
     var headers = new Headers();
     const token = sessionStorage.getItem('acessToken');
-    console.log(token);
     headers.append('Content-Type', "application/json");
     headers.append("Authorization", "Bearer " + token);
 
@@ -23,7 +22,6 @@ window.onload = function () {
         })
         .then(function (response) {
             {
-                console.log(response);
                 response.forEach(function (element, i) {
                     container.innerHTML += `<option value="${element.id}">${element.descricao}</option>`
                 });
@@ -41,7 +39,11 @@ window.onload = function () {
         })
         .then(function (response) {
             if (response.status != 200) {
-                window.alert("falha ao carregar os dados")
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Erro',
+                    text: 'Não foi possivel carregar todos os dados. Por favor tente novamente.'
+                  })
             } else {
                 return response.json();
             }
@@ -54,7 +56,7 @@ window.onload = function () {
 
                 var select = document.querySelector('#EditaSltTipos');
                 for (var i = 0; i < select.options.length; i++) {
-                    if (select.options[i].text === response.tipo.descricao) {
+                    if (select.options[i].text == response.tipo.descricao) {
                         select.selectedIndex = i;
                         break;
                     }
@@ -75,11 +77,13 @@ window.onload = function () {
 }
 
 async function salvarEdicao() {
-    const funcOjb = await setDados();
+    const beneficioOBj = await setDados();
+    console.log(beneficioOBj)
     async function setDados() {
         return {
             descricao: document.getElementById('Editadesc').value,
             tipoDesconto: document.querySelector('#EditaSltTiposDescontos').value,
+            tipoId: document.getElementById("EditaSltTipos").value,
             desconto: document.getElementById('EditaDesconto').value,
         };
 
@@ -93,13 +97,22 @@ async function salvarEdicao() {
 
     fetch('https://rh-web-api.herokuapp.com/beneficio/' + pegaIdPut, {
             method: 'PUT',
-            body: JSON.stringify(funcOjb),
+            body: JSON.stringify(beneficioOBj),
             headers: headers1
         }).then(function (response) {
             if (response.status != 200) {
-                window.alert('falha')
-            } else {
-                return response.json();
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Erro',
+                    text: 'Não foi possível atualizar o benefício. Se o erro persistir contate o administrador do sistema.'
+                  })
+            }else{
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Benefício atualizado com sucesso!',
+                    showConfirmButton: true,
+                });
+                setTimeout("window.location.href = '../View/beneficios.html';", 1500);
             }
 
         })

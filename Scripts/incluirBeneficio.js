@@ -29,14 +29,14 @@ window.onload = function () {
 }
 
 async function cadastrarBeneficio(){
-    const funcOjb = await setDados();
+    const beneficioObj = await setDados();
 
     async function setDados(){
         return {       
             descricao: document.getElementById("desc").value,
             tipoDesconto: document.getElementById("sltTiposDescontos").value,
             desconto: document.getElementById("desconto").value,
-            tipoId: document.getElementById("sltTipos").value,
+            tipoId: document.getElementById("EditaSltTipos").value,
         };
     }
 
@@ -48,19 +48,25 @@ async function cadastrarBeneficio(){
 
         fetch(URL, {
             method: 'POST',
-            body: JSON.stringify(funcOjb),     
+            body: JSON.stringify(beneficioObj),     
             headers: headers     
         })  
         .then(function(response){
-            if(response.status != 200){
-                return response.json();
-            }else{ 
-                console.log("deu ruim");
+            if(response.status != 200){                
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Erro',
+                    text: 'Não foi possível incluir o benefício. Se o erro persistir contate o administrador do sistema.'
+                });
             }
         })
         .then(function(data){
-            window.alert(data)
-            console.log(data);
+            Swal.fire({
+                icon: 'success',
+                title: 'Benefício incluído com sucesso!',
+                showConfirmButton: true,
+            });
+            setTimeout("window.location.href = '../View/beneficios.html';", 1500);
         })    
        
 

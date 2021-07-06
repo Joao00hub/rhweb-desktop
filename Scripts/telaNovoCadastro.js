@@ -111,7 +111,7 @@ async function cadastrarFuncionario(){
 
     async function setDados(){
        
-        if(sessionStorage.getItem('base64TempPic') != undefined || sessionStorage.getItem('base64TempPic') != null || bsessionStorage.getItem('base64TempPic') != ""){
+        if(sessionStorage.getItem('base64TempPic') != undefined || sessionStorage.getItem('base64TempPic') != null || sessionStorage.getItem('base64TempPic') != ""){
 
             const IMGUR_ID = '32a49e8df66e9f8'
             const URL_IMGUR = "https://api.imgur.com/3/image";
@@ -129,7 +129,7 @@ async function cadastrarFuncionario(){
             })  
             .then(function(response){
                 if(response.status != 200){
-                    alert('Não foi possível salvar a imagem')
+                    alert("Ocorreu um erro ao salvar imagem do funcionário.")
                     return response.json();
                 }else{ 
                     return response.json();
@@ -184,16 +184,19 @@ async function cadastrarFuncionario(){
         })  
         .then(function(response){
             if(response.status != 200){
-                return response.json();
-            }else{ 
-                console.log("deu ruim");
-            }
-        })
-        .then(function(data){
-            window.alert(data)
-            console.log(data);
-        })    
-       
-
-
+                    Swal.fire({
+                      icon: 'error',
+                      title: 'Erro',
+                      text: 'Não foi possivel cadastrar o funcionário. Verifique os campos e tente novamente. Se o erro persistir, contate o administrador do sistema.'
+                    })
+                }else{
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Funcionário cadastrado com sucesso!',
+                        showConfirmButton: true,
+                    });
+                    window.location.href = '../View/TelaFuncionarios.html';
+              }
+            
+        })   
 }
